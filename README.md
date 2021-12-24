@@ -1,4 +1,4 @@
-# Projects in Sci-code, Startup Lab Oslo
+## Projects in Sci-code, Startup Lab Oslo
 
 Projects:
 
