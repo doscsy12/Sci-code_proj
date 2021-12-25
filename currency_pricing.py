@@ -67,6 +67,7 @@ class Neural_Network(object):
 
     def relu(self,z):
         return np.maximum(0,z)
+
     def reluPrime(self,z):
         return np.where(z<=0,0,1)
 
@@ -85,7 +86,7 @@ class Neural_Network(object):
         self.yHat = self.forward(X)
         J = 0.5*sum((y-self.yHat)**2)/X.shape[0] + (self.Lambda/2)*(np.sum(self.W1**2)+np.sum(self.W2**2))
         return J
-        
+
     def prediction(self, X, y):
         #Compute cost for given X,y, use weights already stored in class.
         self.yHat = self.forward(X)
@@ -169,7 +170,6 @@ class trainer(object):
         self.N.setParams(params)
         cost = self.N.costFunction(X, y)
         grad = self.N.computeGradients(X,y)
-        
         return cost, grad
         
     def train(self, trainX, trainY, testX, testY):
@@ -190,17 +190,15 @@ class trainer(object):
         options = {'maxiter': 200, 'disp' : True}
         _res = optimize.minimize(self.costFunctionWrapper, params0, jac=True, method='BFGS', \
                                  args=(trainX, trainY), options=options, callback=self.callbackF)
-
         self.N.setParams(_res.x)
         self.optimizationResults = _res
 
 originalY=[]
 originalYhat = []
-def convertBack(XData, StartingDataMax,StartingDataMin,storage):
 
+def convertBack(XData, StartingDataMax,StartingDataMin,storage):
     for i in range(len(XData)):
         original = XData[i]*(StartingDataMax-StartingDataMin)+StartingDataMin
-
         storage.append(original)
     return storage
 
