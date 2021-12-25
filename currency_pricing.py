@@ -25,8 +25,8 @@ def convertX(df, array):
 StartingDataMax = 1
 StartingDataMin = 1
 
-def prepareDF(BitcoinReq, dataX, dataY):
-    dfX = pd.DataFrame(BitcoinReq.json()).bpi
+def prepareDF(NKronorReq, dataX, dataY):
+    dfX = pd.DataFrame(NKronorReq.json()).bpi
     dfX =  dfX.dropna()    
     dfX_y= dfX.drop(dfX.index[0])
     # dfX_y= dfX_y.drop(dfX_y.index[0])
@@ -213,7 +213,7 @@ originalYhat= convertBack(T.yHatValue[T.optimizationResults.nit-1],StartingDataM
 plt.plot(originalY)
 plt.plot(originalYhat)
 plt.grid(1)
-plt.title('Bitcoin prediction')
+plt.title('Currency prediction')
 plt.xlabel('Days')
 plt.ylabel('Price')
 plt.savefig('/usercode/myfig')
