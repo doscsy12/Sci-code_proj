@@ -3,7 +3,8 @@
 # 2. Multiplies the input by a set weights (performs a dot product aka matrix multiplication) 
 # 3. Applies an activation function 
 # 4. Returns an output 
-# 5. Error is calculated by taking the difference from the desired output from the data and the predicted output. This creates our gradient descent, which we can use to alter the weights 
+# 5. Error is calculated by taking the difference from the desired output from the data and the predicted output. 
+# This creates our gradient descent, which we can use to alter the weights 
 # 6. The weights are then altered slightly according to the error. 
 # 7. To train, this process is repeated N times. 
 

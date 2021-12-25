@@ -85,6 +85,7 @@ class Neural_Network(object):
         self.yHat = self.forward(X)
         J = 0.5*sum((y-self.yHat)**2)/X.shape[0] + (self.Lambda/2)*(np.sum(self.W1**2)+np.sum(self.W2**2))
         return J
+        
     def prediction(self, X, y):
         #Compute cost for given X,y, use weights already stored in class.
         self.yHat = self.forward(X)
@@ -164,7 +165,6 @@ class trainer(object):
         self.testJ.append(self.N.costFunction(self.testX, self.testY))
         self.yHatValue.append(self.N.prediction(self.testX, self.testY))
         
-        
     def costFunctionWrapper(self, params, X, y):
         self.N.setParams(params)
         cost = self.N.costFunction(X, y)
@@ -194,7 +194,6 @@ class trainer(object):
         self.N.setParams(_res.x)
         self.optimizationResults = _res
 
-
 originalY=[]
 originalYhat = []
 def convertBack(XData, StartingDataMax,StartingDataMin,storage):
@@ -204,7 +203,6 @@ def convertBack(XData, StartingDataMax,StartingDataMin,storage):
 
         storage.append(original)
     return storage
-
 
 NN = Neural_Network(Lambda=0.0001)
 
