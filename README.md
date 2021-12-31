@@ -1,6 +1,6 @@
 ## Projects in Sci-code, Startup Lab Oslo
 
-Projects:
+FinTech applications using neural networks:
 
 1. Predict housing prices in Norway
 2. Predict currency pricing 
